@@ -2,6 +2,7 @@ package com.embarkx.firstjobapp.company.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -63,7 +64,14 @@ public class CompanyServiceImpl implements CompanyService{
 	@Override
 	public Company getCompanyById(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+	    Optional<Company> optionalCompany = this.companyRepository.findById(id);
+	    
+	    if(optionalCompany.isPresent())
+	    {
+	    	return optionalCompany.get();
+	    }
+	    
+	    return null;
 	}
 	
 	

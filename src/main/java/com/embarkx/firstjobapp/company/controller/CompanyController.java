@@ -51,7 +51,7 @@ public class CompanyController {
 			return ResponseEntity.ok(company);
 		}
 		
-		return new ResponseEntity<String>("Item not deleted", HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<String>("Item not found", HttpStatus.NOT_FOUND);
 	}
 	
 	@DeleteMapping("/{id}")

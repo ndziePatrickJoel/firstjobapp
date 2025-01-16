@@ -69,7 +69,7 @@ public class JobServiceImpl implements JobService {
 			job.setMaxSalary(updatedJob.getMaxSalary());
 			job.setLocation(updatedJob.getLocation());
 			
-			jobRepository.saveAndFlush(job);
+			jobRepository.save(job);
 			
 			return true;
 		}
